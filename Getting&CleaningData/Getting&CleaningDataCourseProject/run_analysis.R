@@ -29,7 +29,7 @@ subject_train    <-    read.table("UCI HAR Dataset/train/subject_train.txt", col
 x_train          <-    read.table("UCI HAR Dataset/train/X_train.txt", col.names = features$functions)
 y_train          <-    read.table("UCI HAR Dataset/train/y_train.txt", col.names = "code")
 
-# 1.3 Merging all data in one set
+# 1.2 Merging all data in one set
 
 mrgX             <-    rbind(x_train, x_test)
 mrgY             <-    rbind(y_train, y_test)
@@ -67,10 +67,9 @@ names(CleanData)    <-    gsub("-freq()", "Frequency", names(CleanData), ignore.
 names(CleanData)    <-    gsub("angle", "Angle", names(CleanData))
 names(CleanData)    <-    gsub("gravity", "Gravity", names(CleanData))
 
-#------------------------------------------------------------------------------
-# Step 5: From the data set in step 4, creates a second, independent tidy data 
-# set with the average of each variable for each activity and each subject.
-#------------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------------------------------------------
+# Step 5: Creating a second, independent tidy data set with the average of each variable for each activity and each subject.
+#---------------------------------------------------------------------------------------------------------------------------
 
 FinalData           <-    CleanData %>%
                           group_by(subject, activity) %>%
