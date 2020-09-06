@@ -36,9 +36,6 @@ mrgY             <-    rbind(y_train, y_test)
 mrgSubject       <-    rbind(subject_train, subject_test)
 MergedData       <-    cbind(Subject, Y, X)
 
-#dim(Merged_Data)
-#[1] 10299   563
-
 #------------------------------------------------------------------------------------------------
 # Step 2: Extracts only the measurements on the mean and standard deviation for each measurement.
 #------------------------------------------------------------------------------------------------
