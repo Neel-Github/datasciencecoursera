@@ -1,14 +1,14 @@
 library(dplyr)
 filename <- "Getting&CleaningDataCourseProject.zip"
 
-#Checking if name already taken
+# Checking if name already taken
 
 if(!file.exists(filename)){
   url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
   download.file(url, destfile = filename)
 }
 
-#Checking if folder is already created
+# Checking if folder is already created
 
 if(!file.exists("UCI HAR Dataset")) { 
   unzip(filename) 
